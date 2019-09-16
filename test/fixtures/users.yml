@@ -1,0 +1,4 @@
+duchop:
+  name: Nguyen Duc Hop
+  email: hopnd98@gmail.com
+  password_digest: <%= User.digest('password') %>
