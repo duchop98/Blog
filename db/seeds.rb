@@ -1,9 +1,11 @@
 #tạo người dùng  mẫu 
-User.create!(name:  "Nguyen Duc Hop",
+User.create!(name: "Nguyen Duc Hop",
              email: "hopnd98@gmail.com",
-             password:              "123456",
+             password: "123456",
              password_confirmation: "123456",
-             admin: true)
+             admin: true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 50.times do |n|
   name  = Faker::Name.name
@@ -12,5 +14,7 @@ User.create!(name:  "Nguyen Duc Hop",
   User.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
 end

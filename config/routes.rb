@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users # Áp dụng kiến trúc Rest cho người dùng
+  resources :account_activations, only: [:edit]
 end
