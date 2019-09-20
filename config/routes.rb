@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'password_resets/new'
+  get 'password_resets/edit'
   root 'static_pages#home'
   get  '/help',    to: 'static_pages#help'
   get  '/aboutme',   to: 'static_pages#aboutme'
@@ -11,4 +13,5 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   resources :users # Áp dụng kiến trúc Rest cho người dùng
   resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 end
